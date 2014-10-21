@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :rooms
-
+  resources :users
+  
   root :to => "rooms#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
