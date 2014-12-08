@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :rooms
-  resources :users
+  #sresources :users
+
+  get 'users/new' => 'users#new'
+  post 'users/' => 'users#create'
   
   root :to => "rooms#index"
 
