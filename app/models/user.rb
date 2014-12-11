@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :email
 	validates_length_of :email, in: 8..30
 
-	validate :email_format
+	#validate :email_format
 
-	def email_format
-		errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
-	end
+##	def email_format
+##		errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
+##s	end
 
 ##################################################################
 # Pode ser utilizado um validador de email baseado em bloco como
@@ -22,12 +22,12 @@ class User < ActiveRecord::Base
 		errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
 =end
 	private
-=begin
+
 	#Essa validação pode ser representada da seguinte dorma:
 	validates_format_of :email, with: EMAIL_REGEXP
-=end
+=begin
 	validate do
 		errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
 	end
-
+=end
 end

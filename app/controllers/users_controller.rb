@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 	
+	protect_from_forgery with: :exception
+	
 	def new
 		@user = User.new
 	end
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
 			redirect_to @user, notice: 'Cadastro criado com sucesso!'
 		else
 			#render action: :new
-			render 'new'
+			render action: 'new'
 		end
 	end
 
